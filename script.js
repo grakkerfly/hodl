@@ -237,11 +237,7 @@ function initSmoothNavigation() {
     };
     
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                document.title = `$HODL - ${entry.target.id.charAt(0).toUpperCase() + entry.target.id.slice(1)}`;
-            }
-        });
+        // 
     }, observerOptions);
     
     sections.forEach(section => observer.observe(section));
@@ -313,4 +309,5 @@ window.addEventListener('resize', () => {
 });
 
 // Touch support
+
 document.addEventListener('touchstart', () => {}, { passive: true });
