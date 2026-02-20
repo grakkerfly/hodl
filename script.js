@@ -111,7 +111,7 @@ function initJupiterModal() {
                     formProps: {
                         initialInputMint: "So11111111111111111111111111111111111111112",
                         initialOutputMint: "Hh3oTaqDCKKfdBgsQEvxp9sUwyNf8x9qmKqEMLBWpump",
-                        fixedMint: "So11111111111111111111111111111111111111112",
+                        fixedMint: "",
                     },
                 });
             }
@@ -311,3 +311,4 @@ window.addEventListener('resize', () => {
 // Touch support
 
 document.addEventListener('touchstart', () => {}, { passive: true });
+
