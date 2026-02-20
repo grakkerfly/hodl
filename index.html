@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>$HODL</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.PNG">
+    
+    <!-- Preview para redes sociais -->
+    <meta property="og:image" content="images/meme1.PNG">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="images/meme1.PNG">
+
+    <link rel="stylesheet" href="style.css">
+    <!-- DexScreener embed styles -->
+    <style>
+        #dexscreener-embed{position:relative;width:100%;padding-bottom:125%;}@media(min-width:1400px){#dexscreener-embed{padding-bottom:65%;}}#dexscreener-embed iframe{position:absolute;width:100%;height:100%;top:0;left:0;border:0;}
+    </style>
+    <!-- Jupiter Plugin -->
+    <script src='https://plugin.jup.ag/plugin-v1.js'></script>
+</head>
+<body>
+    <div class="sections-container">
+        <!-- Section 1: Hero -->
+        <section class="section hero-section" id="hero">
+            <div class="hero-bg" style="background-image: url('images/meme1.PNG');"></div>
+            <h1 class="hero-title">$HODL</h1>
+            <div class="hero-subtitle">The best time to HODL was yesterday. The second-best time is today.</div>
+            <div class="scroll-indicator">
+                <div class="arrow"></div>
+            </div>
+        </section>
+
+        <!-- Section 2: About -->
+        <section class="section about-section" id="about">
+            <div class="about-container">
+                <div class="about-left">
+                    <h2 class="section-title">I AM <span class="highlight">HODLING</span></h2>
+                    <div class="lore-text">
+                        <p>December 2013. Bitcoin crashes from $1,000 to $500. A drunken rant on Bitcointalk changes everything.</p>
+                        <p>GameKyuubi, a self-proclaimed bad trader, types "I AM HODLING" - and misspells it. Instead of correcting, he doubles down. The typo becomes immortal.</p>
+                        <p><strong>HODL</strong> becomes the emotional backbone of crypto culture. One typo. One post. One legend.</p>
+                    </div>
+                    <div class="lore-highlight">
+                        <p>"I wrote it because I'm drunk. The market is volatile. I'm just going to hold my Bitcoin no matter what."</p>
+                        <span>- GameKyuubi, 2013</span>
+                    </div>
+                    <a href="https://bitcointalk.org/index.php?topic=375643.0" target="_blank" class="lore-link">View Original Post →</a>
+                </div>
+                <div class="about-right">
+                    <img src="images/lore.jpg" alt="Original HODL post" class="lore-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Chart & Buy -->
+        <section class="section chart-section" id="chart">
+            <div class="chart-container">
+                <h2 class="section-title">CHART & BUY</h2>
+                <div class="dexscreener-wrapper">
+                    <div id="dexscreener-embed">
+                        <iframe src="https://dexscreener.com/solana/Hh3oTaqDCKKfdBgsQEvxp9sUwyNf8x9qmKqEMLBWpump?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartTheme=light&theme=dark&chartStyle=1&chartType=usd&interval=30"></iframe>
+                    </div>
+                </div>
+                <button class="buy-button" id="openJupiter">BUY $HODL</button>
+            </div>
+        </section>
+
+        <!-- Section 4: Socials -->
+        <section class="section socials-section" id="socials">
+            <div class="socials-container">
+                <h2 class="section-title">SOCIALS</h2>
+                <div class="social-grid">
+                    <a href="https://x.com/i/communities/2022037675856044485/" target="_blank" class="social-card">
+                        <span class="social-name">HODL Community</span>
+                        <span class="social-arrow">→</span>
+                    </a>
+                    <a href="https://dexscreener.com/solana/Hh3oTaqDCKKfdBgsQEvxp9sUwyNf8x9qmKqEMLBWpump" target="_blank" class="social-card">
+                        <span class="social-name">DexScreener</span>
+                        <span class="social-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/GameKyuubi" target="_blank" class="social-card">
+                        <span class="social-name">GitHub (GameKyuubi)</span>
+                        <span class="social-arrow">→</span>
+                    </a>
+                    <a href="https://x.com/HODLAndChill64" target="_blank" class="social-card">
+                        <span class="social-name">Twitter (GameKyuubi)</span>
+                        <span class="social-arrow">→</span>
+                    </a>
+                    <a href="https://bitcointalk.org/index.php?topic=375643.0" target="_blank" class="social-card">
+                        <span class="social-name">BitcoinTalk Post</span>
+                        <span class="social-arrow">→</span>
+                    </a>
+                    <a href="https://sh.reddit.com/user/GameKyuubi/comments/1r904dp/concressence/" target="_blank" class="social-card">
+                        <span class="social-name">Reddit Confirmation</span>
+                        <span class="social-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Meme Gallery -->
+        <section class="section gallery-section" id="gallery">
+            <div class="gallery-container">
+                <h2 class="section-title">MEME GALLERY</h2>
+                <div class="meme-grid" id="memeGrid">
+                    <!-- Generated dynamically via JavaScript -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <button class="music-toggle" id="musicToggle">
+            <span class="play-icon">▶</span>
+            <span class="pause-icon" style="display: none;">⏸</span>
+        </button>
+    </div>
+
+    <!-- Jupiter Modal - Direct plugin container -->
+    <div class="modal" id="jupiterModal">
+        <div id="jupiter-container" style="width: 100%; height: 100%;"></div>
+    </div>
+
+    <!-- Meme Modal with Navigation -->
+    <div class="modal" id="memeModal">
+        <div class="meme-modal-content">
+            <button class="modal-close" id="closeMemeModal">×</button>
+            <button class="meme-nav prev" id="prevMeme">←</button>
+            <img id="expandedMeme" src="" alt="Expanded meme">
+            <button class="meme-nav next" id="nextMeme">→</button>
+            <div class="meme-counter" id="memeCounter">1/16</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
