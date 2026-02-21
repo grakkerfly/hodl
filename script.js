@@ -3,13 +3,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize everything
     initSnapScroll();
-    initMusicPlayer();
     initJupiterModal();
     initMemeGallery();
     initMemeModal();
     initSmoothNavigation();
     initHoverAnimations();
-    initAutoPlayMusic();
 });
 
 // Snap Scroll Enhancement
@@ -42,56 +40,6 @@ function initSnapScroll() {
             }
         }
     });
-}
-
-// Music Player with 40% volume
-function initMusicPlayer() {
-    const audio = new Audio('images/music.mp3');
-    audio.loop = true;
-    audio.volume = 0.2;
-    
-    const toggleBtn = document.getElementById('musicToggle');
-    const playIcon = toggleBtn.querySelector('.play-icon');
-    const pauseIcon = toggleBtn.querySelector('.pause-icon');
-    
-    let isPlaying = false;
-    
-    toggleBtn.addEventListener('click', () => {
-        if (isPlaying) {
-            audio.pause();
-            playIcon.style.display = 'inline';
-            pauseIcon.style.display = 'none';
-        } else {
-            audio.play().catch(e => console.log('Audio play failed:', e));
-            playIcon.style.display = 'none';
-            pauseIcon.style.display = 'inline';
-        }
-        isPlaying = !isPlaying;
-    });
-    
-    // Store audio globally
-    window.hodlAudio = audio;
-    window.hodlAudioState = { isPlaying: false, toggleBtn, playIcon, pauseIcon };
-}
-
-// Auto-play music on ANY click
-function initAutoPlayMusic() {
-    const startAudio = () => {
-        const audio = window.hodlAudio;
-        const { toggleBtn, playIcon, pauseIcon } = window.hodlAudioState;
-        
-        if (audio && !window.hodlAudioStarted) {
-            audio.play().then(() => {
-                window.hodlAudioStarted = true;
-                window.hodlAudioState.isPlaying = true;
-                playIcon.style.display = 'none';
-                pauseIcon.style.display = 'inline';
-            }).catch(e => console.log('Auto-play failed:', e));
-        }
-    };
-    
-    // Listen to ANY click on the document
-    document.addEventListener('click', startAudio, { once: true });
 }
 
 // Jupiter Modal - Direct plugin integration
@@ -309,6 +257,4 @@ window.addEventListener('resize', () => {
 });
 
 // Touch support
-
 document.addEventListener('touchstart', () => {}, { passive: true });
-
